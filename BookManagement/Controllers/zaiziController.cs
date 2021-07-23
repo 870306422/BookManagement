@@ -13,5 +13,10 @@ namespace BookManagement.Controllers
         {
             return View();
         }
+
+        public ActionResult zaizi()
+        {
+            return View();
+        }
     }
 }
