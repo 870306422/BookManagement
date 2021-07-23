@@ -9,7 +9,7 @@ namespace BookManagement.Controllers
     public class zaiziController : Controller
     {
         // GET: zaizi
-        public ActionResult Index()
+        public ActionResult Indexzi()
         {
             return View();
         }
