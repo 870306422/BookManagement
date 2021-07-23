@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Newbook">
+    <Key>
+      <PropertyRef Name="N_Id" />
+    </Key>
+    <Property Name="N_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="A_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Soaringlist">
+    <Key>
+      <PropertyRef Name="S_Id" />
+    </Key>
+    <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="A_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Totallist">
+    <Key>
+      <PropertyRef Name="T_Id" />
+    </Key>
+    <Property Name="T_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="A_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Updatebook">
+    <Key>
+      <PropertyRef Name="U_Id" />
+    </Key>
+    <Property Name="U_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="A_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="BookManagementDBModelStoreContainer">
+    <EntitySet Name="Newbook" EntityType="Self.Newbook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Soaringlist" EntityType="Self.Soaringlist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Totallist" EntityType="Self.Totallist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Updatebook" EntityType="Self.Updatebook" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
