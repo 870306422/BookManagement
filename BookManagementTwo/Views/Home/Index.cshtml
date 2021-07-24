@@ -48,29 +48,40 @@
     </table>
 </div>
 
+<input type="hidden" id="sid" value="" />
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">请输入书名</span>
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+<input type="text" id="bname" value="" />
+<input type="text" id="aname" value="" />
+<input type="file" id="image" value="" />
+<input type="button" onclick="Add()" o value="" />
+
+
 @section scripts{
     <script>
-        $(function () {
+        $(function() {
             @*飙升榜*@
             $.get("https://localhost:44381/api/bmanage/list",
-                function (data) {
+                function(data) {
                     console.log(data);
                 });
             @* 新书榜 *@
             $.get("https://localhost:44381/api/bmanage/ListtList",
-                function (data) {
+                function(data) {
                     console.log(data);
                 });
             @* 总榜 *@
             $.get("https://localhost:44381/api/bmanage/ListtrList",
-                function (data) {
+                function(data) {
                     console.log(data);
                 });
             @* 更新榜 *@
             $.get("https://localhost:44381/api/bmanage/ListFList",
-                function (data) {
+                function(data) {
                     console.log(data);
                 });
-        })
+        });
     </script>
 }

@@ -489,20 +489,104 @@
         </member>
         <member name="M:BookManagement.Controllers.BManageController.ListtList">
             <summary>
-            飙升榜
+            新书榜
             </summary>
             <returns></returns>
         </member>
         <member name="M:BookManagement.Controllers.BManageController.ListtrList">
             <summary>
-            飙升榜
+            总榜
             </summary>
             <returns></returns>
         </member>
         <member name="M:BookManagement.Controllers.BManageController.ListFList">
             <summary>
-            飙升榜
+            更新榜
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.Add(BookManagement.Models.Soaringlist)">
+            <summary>
+            飙升榜增加
+            </summary>
+            <param name="soaringlist">传值</param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.AddOne(BookManagement.Models.Newbook)">
+            <summary>
+            新书榜增加
+            </summary>
+            <param name="newbook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.AddTwo(BookManagement.Models.Totallist)">
+            <summary>
+            总榜增加
+            </summary>
+            <param name="totallist"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.AddTh(BookManagement.Models.Updatebook)">
+            <summary>
+            更新榜增加
+            </summary>
+            <param name="updatebook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.Create(BookManagement.Models.Soaringlist)">
+            <summary>
+            飙升榜修改
+            </summary>
+            <param name="soaringlist">传值</param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.CreateOne(BookManagement.Models.Newbook)">
+            <summary>
+            新书榜修改
+            </summary>
+            <param name="newbook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.CreateTwo(BookManagement.Models.Totallist)">
+            <summary>
+            总榜修改
+            </summary>
+            <param name="totallist"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.CreateTh(BookManagement.Models.Updatebook)">
+            <summary>
+            更新榜修改
+            </summary>
+            <param name="updatebook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.DeleteT(BookManagement.Models.Soaringlist)">
+            <summary>
+            飙升榜删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.DeleteOne(BookManagement.Models.Newbook)">
+            <summary>
+            新书榜删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.DeleteTwo(BookManagement.Models.Totallist)">
+            <summary>
+            总榜删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookManagement.Controllers.BManageController.DeleteTh(BookManagement.Models.Updatebook)">
+            <summary>
+            更新榜删除
+            </summary>
+            <param name="id">更新榜主键</param>
             <returns></returns>
         </member>
     </members>

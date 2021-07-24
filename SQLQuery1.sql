@@ -9,6 +9,9 @@ B_Name varchar(30) not null,--书名
 A_Name varchar(20) not null,--作者名
 [image] varchar(100), --书籍图片
 )
+go
+select * from Soaringlist
+go
 insert into Soaringlist values('刀与星辰','徐浩峰','S1.jpg')
 insert into Soaringlist values('正红旗下','老舍','S2.jpg')
 insert into Soaringlist values('带上她的眼睛','刘慈欣','S3.jpg')
