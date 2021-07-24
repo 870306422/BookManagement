@@ -23,7 +23,7 @@ namespace BookManagement.Controllers
             }
         }
         /// <summary>
-        /// 飙升榜
+        /// 新书榜
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -35,7 +35,7 @@ namespace BookManagement.Controllers
             }
         }
         /// <summary>
-        /// 飙升榜
+        /// 总榜
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -47,7 +47,7 @@ namespace BookManagement.Controllers
             }
         }
         /// <summary>
-        /// 飙升榜
+        /// 更新榜
         /// </summary>
         /// <returns></returns>
         [HttpGet]

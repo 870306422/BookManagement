@@ -50,19 +50,23 @@
 
 @section scripts{
     <script>
-        $(function() {
+        $(function () {
+            @*飙升榜*@
             $.get("https://localhost:44381/api/bmanage/list",
                 function (data) {
                     console.log(data);
                 });
+            @* 飙升榜 *@
             $.get("https://localhost:44381/api/bmanage/ListtList",
                 function (data) {
                     console.log(data);
                 });
+            @* 飙升榜 *@
             $.get("https://localhost:44381/api/bmanage/ListtrList",
                 function (data) {
                     console.log(data);
                 });
+            @* 飙升榜 *@
             $.get("https://localhost:44381/api/bmanage/ListFList",
                 function (data) {
                     console.log(data);
