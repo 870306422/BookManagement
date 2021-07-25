@@ -7,6 +7,6 @@
     "\\BookManagementTwo\\Views\\Totallist",
     "\\BookManagement\\Controllers"
   ],
-  "SelectedNode": "\\BookManagementTwo\\Views\\Totallist\\Show.cshtml",
+  "SelectedNode": "\\BookManagement\\Controllers\\BManageController.cs",
   "PreviewInSolutionExplorer": false
 }
