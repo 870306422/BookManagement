@@ -18,7 +18,7 @@ namespace BookManagement.Controllers
         [HttpGet]
         public List<Soaringlist> list()
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 return db.Soaringlist.ToList();
             }
@@ -30,7 +30,7 @@ namespace BookManagement.Controllers
         [HttpGet]
         public List<Newbook> ListtList()
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 return db.Newbook.ToList();
             }
@@ -42,19 +42,19 @@ namespace BookManagement.Controllers
         [HttpGet]
         public List<Totallist> ListtrList()
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 return db.Totallist.ToList();
             }
         }
         /// <summary>
         /// 更新榜
-        /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>        /// </summary>
+
         [HttpGet]
         public List<Updatebook> ListFList()
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 return db.Updatebook.ToList();
             }
@@ -84,7 +84,7 @@ namespace BookManagement.Controllers
         [HttpPost]
         public bool AddOne(Newbook newbook)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Newbook.Add(newbook);
                 return db.SaveChanges() > 0;
@@ -98,7 +98,7 @@ namespace BookManagement.Controllers
         [HttpPost]
         public bool AddTwo(Totallist totallist)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Totallist.Add(totallist);
                 return db.SaveChanges() > 0;
@@ -112,7 +112,7 @@ namespace BookManagement.Controllers
         [HttpPost]
         public bool AddTh(Updatebook updatebook)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Updatebook.Add(updatebook);
                 return db.SaveChanges() > 0;
@@ -129,7 +129,7 @@ namespace BookManagement.Controllers
         [HttpPut]
         public bool Create(Soaringlist soaringlist)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Entry(soaringlist).State = System.Data.Entity.EntityState.Modified;
                 return db.SaveChanges() > 0;
@@ -143,7 +143,7 @@ namespace BookManagement.Controllers
         [HttpPut]
         public bool CreateOne(Newbook newbook)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Entry(newbook).State = System.Data.Entity.EntityState.Modified;
                 return db.SaveChanges() > 0;
@@ -157,7 +157,7 @@ namespace BookManagement.Controllers
         [HttpPut]
         public bool CreateTwo(Totallist totallist)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Entry(totallist).State = System.Data.Entity.EntityState.Modified;
                 return db.SaveChanges() > 0;
@@ -171,7 +171,7 @@ namespace BookManagement.Controllers
         [HttpPut]
         public bool CreateTh(Updatebook updatebook)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 db.Entry(updatebook).State = System.Data.Entity.EntityState.Modified;
                 return db.SaveChanges() > 0;
@@ -188,7 +188,7 @@ namespace BookManagement.Controllers
         [HttpDelete]
         public bool DeleteT(Soaringlist id)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 var obj = db.Soaringlist.Find(id.S_Id);
                 db.Soaringlist.Remove(obj);
@@ -203,7 +203,7 @@ namespace BookManagement.Controllers
         [HttpDelete]
         public bool DeleteOne(Newbook id)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 var obj = db.Newbook.Find(id.N_Id);
                 db.Newbook.Remove(obj);
@@ -218,7 +218,7 @@ namespace BookManagement.Controllers
         [HttpDelete]
         public bool DeleteTwo(Totallist id)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 var obj = db.Totallist.Find(id.T_Id);
                 db.Totallist.Remove(obj);
@@ -233,7 +233,7 @@ namespace BookManagement.Controllers
         [HttpDelete]
         public bool DeleteTh(Updatebook id)
         {
-            using (BookManagementDBEntities3 db = new BookManagementDBEntities3())
+            using (BookManagementDBEntities db = new BookManagementDBEntities())
             {
                 var obj = db.Updatebook.Find(id.U_Id);
                 db.Updatebook.Remove(obj);
