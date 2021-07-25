@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\BookManagement",
+    "\\BookManagementTwo",
+    "\\BookManagementTwo\\Views",
+    "\\BookManagementTwo\\Views\\Totallist",
     "\\BookManagement\\Controllers"
   ],
+  "SelectedNode": "\\BookManagementTwo\\Views\\Totallist\\Show.cshtml",
   "PreviewInSolutionExplorer": false
 }
