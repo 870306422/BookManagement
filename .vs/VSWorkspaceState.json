@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BookManagement",
+    "\\BookManagementTwo",
+    "\\BookManagementTwo\\Views",
+    "\\BookManagementTwo\\Views\\Updatebook",
+    "\\BookManagement\\Controllers"
   ],
-  "SelectedNode": "\\BookManagement.sln",
+  "SelectedNode": "\\BookManagementTwo\\Views\\Updatebook\\Select.cshtml",
   "PreviewInSolutionExplorer": false
 }
