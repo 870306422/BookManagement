@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/fileinput.min.css" rel="stylesheet" />
+<link href="~/chaji/bootstrap.min.css" rel="stylesheet" />
+
+<div style="height: 500px;margin:0px auto;">
+    <input id="file-Portrait" name="file1" type="file">
+</div>
+<img style="width:300px;height:300px" src="~/UpLoadFile/20210705/1.jpg" />
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+ $(function () {
+
+        tupian();
+
+    });
+        function tupian() {
+            //初始化fileinput控件（第一次初始化）
+            $('#file-Portrait').fileinput({
+                language: 'zh', //设置语言
+
+              uploadUrl: '@Url.Action("UploadFile", "Newbook")',
+
+                // uploadUrl: "/Palm/UploadFile", //上传的地址
+                allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀,
+                dataTable: 'JSON',
+            }).on("fileuploaded", function (event, data) {
+
+                var a = "/" + data.response;
+                $("#qqq").val(a)
+
+            });
+        }
+
+</script>
+<script src="~/Content/fileinput.min.js"></script>
+<script src="~/Content/zh.js"></script>
+<script src="~/Content/theme.js"></script>

@@ -1,0 +1,210 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/fileinput.min.css" rel="stylesheet" />
+<link href="~/chaji/bootstrap.min.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table id="table" class="table" border="1" style="text-align:center;width:600px;margin:0px;height:400px;">
+            <tr>
+                <td>编号</td>
+                <td>书名</td>
+                <td>作者</td>
+                <td>图片</td>
+                <td>操作</td>
+            </tr>
+        </table>
+    </div>
+    <div style="border:1px solid;">
+        <h2>添加用户</h2>
+        <input type="hidden" name="N_Id" id="N_Id" value="" />
+        账户: <input type="text" name="B_Name" id="B_Name" value="" /><br />
+        密码: <input type="text" name="A_Name" id="A_Name" value="" /><br />
+
+
+        <label style="float:left;line-height:40px" for="image">上传</label>
+        <input id="file-Portrait" name="image" type="file">
+        <input type="text" id="qq" name="qq" value="" />
+
+        <input type="button" name="name" onclick="add()" value="添加" />
+    </div>
+    <div style="border:1px solid;">
+        <h2>修改用户</h2>
+        <input type="hidden" name="N_Id" id="N_Id2" value="" />
+        账户: <input type="text" name="B_Name" id="B_Name2" value="" /><br />
+        密码: <input type="text" name="A_Name" id="A_Name2" value="" /><br />
+                                            
+              
+            <div id="imgs" style="height:200px; width:200px;" >
+
+           </div>
+                                                                         
+                                                                           
+            <input id="file-Portrait1" name="image" type="file">
+              <input type="text" id="qqq" name="qqq" value="" />
+                                                                           
+                                                                     
+                                                                    
+
+       <input type="button" name="name" onclick="edit()" value="修改" /><br />
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        $.getJSON("https://localhost:44381/api/BManage/ListtList", users)
+
+        $("#sel").click(onsel)
+
+    })
+    function users(data) {
+        console.info(data);
+        $("#table").find("tr:gt(0)").remove();
+        $.each(data, function (key, val) {
+            var rableRow = '<tr>' +
+                '<td>' + val.N_Id + '</td>' +
+                '<td>' + val.B_Name + '</td>' +
+                '<td>' + val.A_Name + '</td>' +
+                '<td>' + val.image + '</td>' +
+                '<td> <input type="button" class="update" name="update" value="修改" /><input type="button"   name="delete"  class="delete"  value="删除"/></td>' +
+                '</tr>';
+            $("#table").append(rableRow)
+        });
+        $(".update").click(onupdate)
+        $(".delete").click(ondelete)
+
+
+    }
+
+    function add() {
+        var B_Name = $("#B_Name").val();
+        var A_Name = $("#A_Name").val();
+        var image = $("#qq").val();
+
+        $.ajax({
+            type: 'post',
+            url: 'https://localhost:44381/api/BManage/AddOne',
+            data: {
+                B_Name: B_Name, A_Name: A_Name, image: image,
+            },
+            success: function (data) {
+                if (data == true) {
+                    alert("添加成功")
+                    location.reload();
+                }
+
+            }
+        })
+    }
+
+
+    function onupdate() {
+        var row = $(this).parent().parent();
+        $("#B_Name2").val(row.children().eq(1).text())
+        $("#A_Name2").val(row.children().eq(2).text())
+        $("#qqq").val(row.children().eq(3).text())
+        $("#N_Id2").val(row.children().eq(0).text())
+        var imgss = "<img src='" + row.children().eq(3).text()+ "' width='100' height='100'style='border-radius:50%' />";
+
+        $("#imgs").html(imgss)
+        alert(row.children().eq(4).text());
+    }
+    function edit() {
+
+        var B_Name = $("#B_Name2").val();
+        var A_Name = $("#A_Name2").val();
+        var image = $("#qqq").val();
+
+        var N_Id = $("#N_Id2").val();
+        
+        $.ajax({
+            type: 'PUT',
+            url: 'https://localhost:44381/api/BManage/CreateOne',
+            data: {
+                B_Name: B_Name, A_Name: A_Name, image: image, N_Id: N_Id,
+            },
+            success: function (data) {
+                if (data == true) {
+                    alert("修改成功")
+                    location.reload();
+                }
+
+            }
+
+        })
+    }
+    function ondelete() {
+        var row = $(this).parent().parent();
+        var N_Id = row.children().eq(0).text();
+        if (confirm("确定删除嘛？")) {
+            $.ajax({
+                type: 'Delete',
+                url: 'https://localhost:44381/api/BManage/DeleteOne',
+                data: {
+                    N_Id: N_Id
+                },
+                success: function (data) {
+                    if (data == true) {
+                        alert("删除成功")
+                        location.reload();
+                    }
+
+                }
+
+            })
+        }
+    }
+
+    $(function () {
+
+        tupian();
+        tupians();
+    });
+        function tupian() {
+            //初始化fileinput控件（第一次初始化）
+            $('#file-Portrait').fileinput({
+                language: 'zh', //设置语言
+
+              uploadUrl: '@Url.Action("UploadFile", "Newbook")',
+
+                // uploadUrl: "/Palm/UploadFile", //上传的地址
+                allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀,
+                dataTable: 'JSON',
+            }).on("fileuploaded", function (event, data) {
+
+                var a = "/" + data.response;
+                $("#qq").val(a)
+
+            });
+        }
+     function tupians() {
+            //初始化fileinput控件（第一次初始化）
+            $('#file-Portrait1').fileinput({
+                language: 'zh', //设置语言
+
+              uploadUrl: '@Url.Action("UploadFile", "Newbook")',
+
+                // uploadUrl: "/Palm/UploadFile", //上传的地址
+                allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀,
+                dataTable: 'JSON',
+            }).on("fileuploaded", function (event, data) {
+
+                var a = "/" + data.response;
+                $("#qqq").val(a)
+
+            }); 
+        }
+</script>
+<script src="~/Content/fileinput.min.js"></script>
+<script src="~/Content/zh.js"></script>
+<script src="~/Content/theme.js"></script>
