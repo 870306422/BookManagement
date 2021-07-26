@@ -119,15 +119,15 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\BookManagent.Context.tt">
+    <Content Include="Models\BookManagementDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BookManagent.Context.cs</LastGenOutput>
-      <DependentUpon>BookManagent.edmx</DependentUpon>
+      <DependentUpon>BookManagementDB.edmx</DependentUpon>
+      <LastGenOutput>BookManagementDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BookManagent.tt">
+    <Content Include="Models\BookManagementDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookManagent.edmx</DependentUpon>
-      <LastGenOutput>BookManagent.cs</LastGenOutput>
+      <DependentUpon>BookManagementDB.edmx</DependentUpon>
+      <LastGenOutput>BookManagementDB.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,20 +166,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookManagent.Context.cs">
+    <Compile Include="Models\BookManagementDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookManagent.Context.tt</DependentUpon>
+      <DependentUpon>BookManagementDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookManagent.cs">
+    <Compile Include="Models\BookManagementDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookManagent.tt</DependentUpon>
+      <DependentUpon>BookManagementDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookManagent.Designer.cs">
+    <Compile Include="Models\BookManagementDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookManagent.edmx</DependentUpon>
+      <DependentUpon>BookManagementDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Newbook.cs">
+      <DependentUpon>BookManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Soaringlist.cs">
+      <DependentUpon>BookManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Totallist.cs">
+      <DependentUpon>BookManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Updatebook.cs">
+      <DependentUpon>BookManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,12 +217,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\BookManagent.edmx">
+    <EntityDeploy Include="Models\BookManagementDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookManagent.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookManagementDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BookManagent.edmx.diagram">
-      <DependentUpon>BookManagent.edmx</DependentUpon>
+    <Content Include="Models\BookManagementDB.edmx.diagram">
+      <DependentUpon>BookManagementDB.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />

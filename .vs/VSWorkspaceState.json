@@ -7,6 +7,6 @@
     "\\BookManagementTwo\\Views\\Updatebook",
     "\\BookManagement\\Controllers"
   ],
-  "SelectedNode": "\\BookManagementTwo\\Views\\Updatebook\\Select.cshtml",
+  "SelectedNode": "\\BookManagement\\Controllers\\BManageController.cs",
   "PreviewInSolutionExplorer": false
 }
