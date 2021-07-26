@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+        <div class="row clearfix">
+            <div class="col-md-6 column" style="height: 350px;margin:0px auto;">
+                <label style="float:left;line-height:40px" for="image">上传</label>
+                <input id="file-Portrait" name="image" type="file">
+                <input type="hidden" id="qqq" name="qqq" value="" />
+            </div>
+            <div class="col-md-6 column">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+      function tupian() {
+            //初始化fileinput控件（第一次初始化）
+            $('#file-Portrait').fileinput({
+                language: 'zh', //设置语言
+
+              uploadUrl: '@Url.Action("UploadFile", "Default")',
+
+                // uploadUrl: "/Palm/UploadFile", //上传的地址
+                allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀,
+                dataTable: 'JSON',
+            }).on("fileuploaded", function (event, data) {
+
+                var a = "/" + data.response;
+                $("#qqq").val(a)
+
+
+
+            });
+        }
+</script>
+
+<script src="~/Content/fileinput.min.js"></script>
+<script src="~/Content/zh.js"></script>
+<script src="~/Content/theme.js"></script>
